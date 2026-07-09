@@ -1,0 +1,22 @@
+[Adblock Plus 2.0]
+! Title: Block YouTube Shorts (Desktop & Mobile)
+! Description: Blocks YouTube Shorts URLs and hides Shorts elements on both desktop and mobile layouts.
+
+! URL Blocking for Desktop and Mobile
+||youtube.com/shorts/*$document,important
+||www.youtube.com/shorts/*$document,important
+||m.youtube.com/shorts/*$document,important
+
+! --- DESKTOP COSMETIC FILTERS ---
+! Hides Shorts in the sidebar and main feed
+youtube.com##ytd-guide-entry-renderer:has(a[href="/shorts"])
+youtube.com##ytd-mini-guide-entry-renderer:has(a[href="/shorts"])
+youtube.com##ytd-rich-section-renderer:has(a[href="/shorts"])
+youtube.com##ytd-reel-shelf-renderer
+
+! --- MOBILE COSMETIC FILTERS (m.youtube.com) ---
+! Hides the Shorts button in the bottom navigation bar
+m.youtube.com##ytm-pivot-button-renderer:has(a[href="/shorts"])
+! Hides Shorts shelves/carousels on the mobile homepage and search results
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytm-item-section-renderer:has(ytm-reel-shelf-renderer)
